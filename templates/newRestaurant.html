@@ -1,0 +1,42 @@
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>RESTAURANTS</title>	
+	<link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+		<header>
+            <div class="title">
+			<h1>RESTAURANTS</h1>
+            </div>
+		</header>
+		<div class="subtitle">
+			<p>NEW RESTAURANT</p>
+		</div>
+
+		<div class="new">
+
+			<form action="{{ url_for('newRestaurant') }}" method="POST">
+				<input type="text" name="newRestaurant" placeholder="New Restaurant">
+                <div class="formoptions">
+				<input class="add" type="submit" value="ADD">
+			</form>
+             <form action="{{ url_for('home') }}">
+                 <input class="cancel" type="submit" value="CANCEL">
+                 </div>
+             </form>
+		</div>
+	
+	<footer>
+        MADE BY JOJI
+	</footer>
+
+</body>
+
+</html>

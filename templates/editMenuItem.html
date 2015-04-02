@@ -1,0 +1,45 @@
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>RESTAURANTS</title>	
+	<link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">    
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+		<header>
+            <div class='title'>
+			<h1>{{ restaurant.name }}</h1>
+            </div>
+		</header>
+		<div class="subtitle">
+			<p>EDIT ITEM</p>
+		</div>
+
+		<div class="edit">
+
+				<div class="edititem">
+					<form action="{{ url_for('editItem', rest_id=restaurant.id, menu_id=item.id) }}" method='POST'>
+					<div class="editname"><input type='text' name='itemName' value="{{ item.name }}"></div>
+					<div class="editprice"><input type='text' name='itemPrice' value="{{ item.price }}"></div>
+					<div class="editdescription"><textarea class="editdescription" name='itemDescription'>{{ item.description }}</textarea></div>
+					<input type="submit" value="EDIT ITEM">
+					</form>
+                        <form action="{{ url_for('showMenu', rest_id=restaurant.id) }}">
+                            <input type="submit" value="CANCEL">
+                        </form>
+				</div class="item">
+
+		</div>
+	
+	<footer>
+		made by joji
+	</footer>
+
+</body>
+
+</html>
